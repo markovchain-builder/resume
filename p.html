@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Resume - Annie</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2e6c80',
+            secondary: '#4a8ca0',
+            accent: '#f0a868',
+            light: '#f8fafc',
+            dark: '#1e293b'
+          },
+          fontFamily: {
+            sans: ['Inter', 'Arial', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .section-fade {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .section-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .skill-bar {
+        height: 8px;
+        background-color: #e2e8f0;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .skill-progress {
+        height: 100%;
+        background-color: #2e6c80;
+        width: 0;
+        transition: width 1s ease-out;
+      }
+      .card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-dark">
+  <div class="cv max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-8 transition-all duration-300 hover:shadow-xl">
+    <!-- Header Section -->
+    <header class="bg-primary text-white p-8 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-accent/20 rounded-full -mr-16 -mt-16"></div>
+      <div class="absolute bottom-0 left-0 w-24 h-24 bg-accent/20 rounded-full -ml-12 -mb-12"></div>
+      
+      <h1 class="text-4xl font-bold mb-2 relative z-10">Annie</h1>
+      <p class="text-xl text-white/90 mb-4 relative z-10">Data Science Undergraduate</p>
+      
+      <div class="flex flex-wrap gap-4 mt-6 relative z-10">
+        <div class="flex items-center">
+          <i class="fa fa-envelope-o mr-2"></i>
+          <span>keepstudying931@gmail.com</span>
+        </div>
+        <div class="flex items-center">
+          <i class="fa fa-github mr-2"></i>
+          <span>forgetu6</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="p-8">
+      <!-- About Section -->
+      <section class="mb-10 section-fade card-hover">
+        <h2 class="text-2xl font-bold text-primary mb-4 border-b-2 border-accent pb-2">About Me</h2>
+        <p class="text-gray-700 leading-relaxed">
+          I am a sophomore student majoring in Data Science, passionate about data analysis and machine learning. 
+          I am eager to learn, explore new technologies, and apply my knowledge to real-world problems. 
+          Recently, I participated in the Pembroke Cambridge Summer Programme, where I gained starter experience in classification techniques.
+        </p>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="mb-10 section-fade">
+        <h2 class="text-2xl font-bold text-primary mb-4 border-b-2 border-accent pb-2">Experience</h2>
+        <div class="space-y-6">
+          <div class="pl-4 border-l-2 border-secondary card-hover">
+            <h3 class="text-xl font-semibold">Pembroke Cambridge Summer Programme</h3>
+            <p class="text-gray-600 italic">Student • Summer 2025</p>
+            <p class="mt-2 text-gray-700">
+              Gained foundational experience in classification methods for data science. Participated in lectures, 
+              workshops, and project-based learning with international peers, enhancing cross-cultural collaboration skills.
+            </p>
+          </div>
+          
+          <div class="pl-4 border-l-2 border-secondary card-hover">
+            <h3 class="text-xl font-semibold">Biological Data Science Research (In Preparation)</h3>
+            <p class="mt-2 text-gray-700">
+              Planning to explore research topics related to biological data, integrating data science techniques 
+              with biological datasets to solve complex scientific problems.
+            </p>
+          </div>
+          
+          <div class="pl-4 border-l-2 border-secondary card-hover">
+            <h3 class="text-xl font-semibold">Seeking Internship Opportunities</h3>
+            <p class="mt-2 text-gray-700">
+              Actively looking for internships in data science and related fields to gain practical experience, 
+              apply academic knowledge, and contribute to real-world projects.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section class="mb-10 section-fade card-hover">
+        <h2 class="text-2xl font-bold text-primary mb-4 border-b-2 border-accent pb-2">Education</h2>
+        <div class="pl-4 border-l-2 border-secondary">
+          <h3 class="text-xl font-semibold">Bachelor of Science in Data Science</h3>
+          <p class="text-gray-600 italic">University • Expected Graduation: 2028</p>
+          <p class="mt-2 text-gray-700">
+            Currently pursuing a degree in Data Science with coursework focusing on statistics, programming, 
+            machine learning, and data visualization.
+          </p>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="mb-6 section-fade">
+        <h2 class="text-2xl font-bold text-primary mb-4 border-b-2 border-accent pb-2">Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="card-hover">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">Python (NumPy, Pandas)</span>
+              <span>Intermediate</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="65%"></div>
+            </div>
+          </div>
+          <div class="card-hover">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">Basic Machine Learning</span>
+              <span>Beginner</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="40%"></div>
+            </div>
+          </div>
+          <div class="card-hover">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">Data Visualization (Matplotlib)</span>
+              <span>Intermediate</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="60%"></div>
+            </div>
+          </div>
+          <div class="card-hover">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">Git & GitHub</span>
+              <span>Intermediate</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="65%"></div>
+            </div>
+          </div>
+          <div class="card-hover">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">English Communication</span>
+              <span>Advanced</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
+            </div>
+          </div>
+          <div class="card-hover">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">Basic Statistical Knowledge</span>
+              <span>Intermediate</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="60%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Smooth scrolling for navigation (if added)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Section fade-in animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('section-visible');
+          observer.unobserve(entry.target);
+          
+          // Animate skill bars when section is visible
+          if (entry.target.classList.contains('section-fade') && entry.target.querySelector('.skill-progress')) {
+            setTimeout(() => {
+              const skillBars = entry.target.querySelectorAll('.skill-progress');
+              skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width;
+              });
+            }, 300);
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section-fade').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
